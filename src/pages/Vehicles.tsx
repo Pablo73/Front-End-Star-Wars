@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ApiRequestContext from '../context/ApiRequestContext';
 import { Vehicle } from '../type';
 import Loading from './Loading';
-import '../App.css';
+import '../css/vehicles.css'
 
 function Vehicles() {
   const navigate = useNavigate();

@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Consumir a API de Star Wars
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto consiste em uma aplicação web que consome a API de Star Wars (https://swapi.dev/about) para listar os veículos disponíveis. Os usuários podem adquirir um dos veículos listados através de um processo de checkout.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- [x] Listar os veículos da API de Star Wars conforme a documentação.
+- [x] Permitir a aquisição de um veículo selecionado através do checkout.
+- [x] Exigir informações pessoais, informações de endereço e informações de pagamento no checkout.
+- [x] Utilizar a API ViaCEP para obter automaticamente os dados de endereço com base no CEP informado pelo cliente.
+- [x] Realizar validação nos formulários do checkout, incluindo e-mail e CPF/CNPJ.
+- [ ] Exibir uma tela de sucesso após a compra ou um toast de erro em caso de dados inválidos.
+- [ ] Todos os dados utilizados serão mockados.
 
-### `npm start`
+## Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ReactJS: biblioteca JavaScript para construção de interfaces de usuário.
+- MobX: biblioteca para gerenciamento de estado.
+- TypeScript: linguagem de programação que adiciona tipagem estática ao JavaScript.
+- Formik: biblioteca para gerenciamento de formulários em React.
+- Yup: biblioteca de validação de esquemas para JavaScript e TypeScript.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Pré-requisitos 
 
-### `npm test`
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (https://nodejs.org)
+- npm (gerenciador de pacotes do Node.js)
 
-### `npm run build`
+## Como executar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone este repositório em sua máquina local:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```ruby
+git clone <URL do repositório>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Acesse o diretório do projeto:
 
-### `npm run eject`
+```ruby
+cd desafio-front-end-5labs
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Instale as dependências do projeto:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```ruby
+npm install ou npm install --force
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Execute o projeto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```ruby
+npm start
+```
