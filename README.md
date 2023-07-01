@@ -2,6 +2,10 @@
 
 Este projeto consiste em uma aplicação web que consome a API de Star Wars (https://swapi.dev/about) para listar os veículos disponíveis. Os usuários podem adquirir um dos veículos listados através de um processo de checkout.
 
+# Deploy
+
+O projeto está implantado e disponível em: 
+
 ## Funcionalidades
 
 - [x] Listar os veículos da API de Star Wars conforme a documentação.
@@ -38,7 +42,7 @@ git clone <URL do repositório>
 2. Acesse o diretório do projeto:
 
 ```ruby
-cd desafio-front-end-5labs
+cd Front-End-Star-Wars
 ```
 
 3. Instale as dependências do projeto:
