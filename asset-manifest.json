@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Front-End-Star-Wars/static/css/main.a8b94243.css",
+    "main.js": "/Front-End-Star-Wars/static/js/main.41654521.js",
+    "index.html": "/Front-End-Star-Wars/index.html",
+    "main.a8b94243.css.map": "/Front-End-Star-Wars/static/css/main.a8b94243.css.map",
+    "main.41654521.js.map": "/Front-End-Star-Wars/static/js/main.41654521.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8b94243.css",
+    "static/js/main.41654521.js"
+  ]
+}
