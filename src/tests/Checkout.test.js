@@ -32,15 +32,4 @@ describe('Checkout Component', () => {
     });
 
   });
-
-  // it('should show error message for invalid email', () => { nnnn+--------
-  //   render(<Checkout />);
-
-  //   const emailInput = screen.getByText('EMAIL');
-  //   fireEvent.change(emailInput, { target: { value: 'invalidemail' } });
-  //   fireEvent.click(screen.getByRole('button', { name: 'Salvar' }));
-
-  //   expect(screen.getByText('E-mail inválido')).toBeInTheDocument();
-  // });
-
 });

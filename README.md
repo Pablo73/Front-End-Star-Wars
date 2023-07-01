@@ -2,7 +2,7 @@
 
 Este projeto consiste em uma aplicação web que consome a API de Star Wars (https://swapi.dev/about) para listar os veículos disponíveis. Os usuários podem adquirir um dos veículos listados através de um processo de checkout.
 
-# Deploy
+## Deploy
 
 O projeto está implantado e disponível em: 
 
@@ -18,11 +18,11 @@ O projeto está implantado e disponível em:
 
 ## Tecnologias utilizadas
 
-- ReactJS: biblioteca JavaScript para construção de interfaces de usuário.
-- MobX: biblioteca para gerenciamento de estado.
-- TypeScript: linguagem de programação que adiciona tipagem estática ao JavaScript.
-- Formik: biblioteca para gerenciamento de formulários em React.
-- Yup: biblioteca de validação de esquemas para JavaScript e TypeScript.
+- **ReactJS**: [REACT](https://pt-br.legacy.reactjs.org/) construção da interfaces de usuário.
+- **MobX**: [Mobx](https://mobx.js.org/react-integration.html) gerenciamento de estado.
+- **TypeScript**: [TypeScript](https://www.typescriptlang.org/) linguagem de programação que adiciona tipagem estática ao JavaScript.
+- **Formik**: [Formik](https://formik.org/) biblioteca para gerenciamento de formulários em React.
+- **Yup**: [Yup](https://github.com/jquense/yup) biblioteca de validação de esquemas para JavaScript e TypeScript.
 
 ## Pré-requisitos 
 
