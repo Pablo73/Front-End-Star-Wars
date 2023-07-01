@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { cpf, cnpj } from 'cpf-cnpj-validator';
-import './checkout.css';
+import '../css/checkout.css';
 
 function Checkout() {
 
@@ -44,24 +44,17 @@ function Checkout() {
     const validationSchema = Yup.object({
         email: Yup.string().email('E-mail inválido').required('Campo Obrigatório'),
         cpfCnpj: Yup.string()
-        .test('cpf-cnpj-validation', 'CPF ou CNPJ inválido', (value) => {
-            if(!value) return true;
+            .test('cpf-cnpj-validation', 'CPF ou CNPJ inválido', (value) => {
+                if (!value) return true;
 
-            if(cpf.isValid(value) || cnpj.isValid(value)){
-                return true;
-            }
-            return false;
-        }).required('Campo Obrigatório'),
-        telefone: Yup.string().required('Campo Obrigatório'),
-        name: Yup.string().required('Campo Obrigatório'),
+                if (cpf.isValid(value) || cnpj.isValid(value)) {
+                    return true;
+                }
+                return false;
+            }).required('Campo Obrigatório'),
         cep: Yup.string()
             .matches(/^\d{5}-\d{3}$/, 'CEP inválido. Formato esperado: 12345-678')
             .required('Campo Obrigatório'),
-        rua: Yup.string().required('Campo Obrigatório'),
-        numero: Yup.number().required('Campo Obrigatório'),
-        cidade: Yup.string().required('Campo Obrigatório'),
-        bairro: Yup.string().required('Campo Obrigatório'),
-        uf: Yup.string().required('Campo Obrigatório')
     });
 
     const fetchAddress = async (cep: string, setFieldValue: (field: string, value: string) => void) => {
@@ -91,95 +84,85 @@ function Checkout() {
     return (
         <div className="row">
             <div className="col-75">
-            <div className="container">
-                <h1>
-                    Check-Out
-                </h1>
-                <Formik
-                    validationSchema={validationSchema}
-                    onSubmit={handleSubmit}
-                    initialValues={initialValues}
-                >
-                    {({ isSubmitting, setFieldValue }) => (
-                        <Form>
-                            <div>
+                <div className="container">
+                    <h1>
+                        Dados Pessoais
+                    </h1>
+                    <Formik
+                        validationSchema={validationSchema}
+                        onSubmit={handleSubmit}
+                        initialValues={initialValues}
+                    >
+                        {({ isSubmitting, setFieldValue}) => (
+                            <Form className="col-25">
                                 <div>
-                                    <label>NOME</label>
-                                    <Field name='name' type='text' placeholder="Nome completo"/>
-                                    <ErrorMessage name="name" component="div" className="error" />
-                                </div>
-                                <div >
-                                    <label>EMAIL</label>
-                                    <Field className="inputbox" name='email' type='text' placeholder="email@address.com"/>
-                                    <ErrorMessage name="email" component="div" className="error" />
-                                </div>
-                            </div>
-                            <div className="name">
-                                <div>
-                                    <label>TELEFONE</label>
-                                    <PhoneInput
-                                        country={'br'}
-                                        inputClass="inputbox"
-                                        inputProps={{
-                                            name: 'telefone',
-                                            required: true
-                                        }} 
-                                    />
-                                    <ErrorMessage name="telefone" component="div" className="error" />
+                                    <div>
+                                        <label htmlFor="name">NOME</label>
+                                        <Field name='name' type='text' placeholder="Nome completo" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email">EMAIL</label>
+                                        <ErrorMessage name="email" component="div" className="error" />
+                                        <Field name='email' type='text' placeholder="email@address.com" />
+                                    </div>
                                 </div>
                                 <div>
-                                    <label>CPF ou CNPJ</label>
-                                    <Field className="inputbox" name="cpfCnpj" type="text" placeholder="CPF ou CNPJ"/>
-                                    <ErrorMessage name="cpfCnpj" component="div" className="error" />
-                                </div>
-                            </div>
-                            <div >
-                                <label>CEP</label>
-                                <Field className="inputbox" name='cep' type='text'
-                                    onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
-                                        fetchAddress(event.target.value, setFieldValue)
-                                    } placeholder="CEP"/>
-                                <ErrorMessage name="cep" component="div" className="error" />
-                            </div>
-                            <div>
-                                <label>RUA</label>
-                                <Field className="inputbox" name='rua' type='text' placeholder="Logradouro"/>
-                                <ErrorMessage name="rua" component="div" className="error"/>
-                            </div>
-                            <div>
-                                <div >
-                                    <label>NÚMERO</label>
-                                    <Field className="inputbox" name='numero' type='text' placeholder="Número"/>
-                                    <ErrorMessage name="numero" component="div" className="error" />
+                                    <div>
+                                        <label htmlFor="telefone">TELEFONE</label>
+                                        <PhoneInput
+                                            country={'br'}
+                                            inputProps={{ name: 'telefone' }}
+                                            onChange={(value) => setFieldValue('telefone', value)}
+                                        />
+                                    </div>
+                                    <br></br>
+                                    <div>
+                                        <label htmlFor="cpfCnpj">CPF ou CNPJ</label>
+                                        <ErrorMessage name="cpfCnpj" component="div" className="error" />
+                                        <Field name="cpfCnpj" type="text" placeholder="CPF ou CNPJ" />
+                                    </div>
                                 </div>
                                 <div >
-                                    <label>COMPLEMENTO</label>
-                                    <Field className="inputbox" name='complemento' type='text' placeholder="Complemento"/>
-                                    <ErrorMessage name="complemento" component="div" className="error" />
+                                    <label htmlFor="cep">CEP</label>
+                                    <ErrorMessage name="cep" component="div" className="error" />
+                                    <Field name='cep' type='text'
+                                        onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
+                                            fetchAddress(event.target.value, setFieldValue)
+                                        } placeholder="CEP" />
                                 </div>
-                                <div >
-                                    <label>BAIRRO</label>
-                                    <Field className="inputbox" name='bairro' type='text' placeholder="Bairro"/>
-                                    <ErrorMessage name="bairro" component="div" className="error"/>
+                                <div>
+                                    <label htmlFor="rua">RUA</label>
+                                    <Field name='rua' type='text' placeholder="Logradouro" />
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-50">
-                                    <label>CIDADE</label>
-                                    <Field className="inputbox" name='cidade' type='text' placeholder="Cidade"/>
-                                    <ErrorMessage name="cidade" component="div" className="error"/>
+                                <div>
+                                    <div >
+                                        <label htmlFor="numero">NÚMERO</label>
+                                        <Field name='numero' type='text' placeholder="Número" />
+                                    </div>
+                                    <div >
+                                        <label htmlFor="complemento">COMPLEMENTO</label>
+                                        <Field name='complemento' type='text' placeholder="Complemento" />
+                                    </div>
+                                    <div >
+                                        <label htmlFor="bairro">BAIRRO</label>
+                                        <Field name='bairro' type='text' placeholder="Bairro" />
+                                    </div>
                                 </div>
-                                <div className="col-50">
-                                    <label>UF</label>
-                                    <Field className="inputbox" name='uf' type='text' placeholder="UF"/>
-                                    <ErrorMessage name="uf" component="div" className="error" />
+                                <div>
+                                    <div>
+                                        <label htmlFor="cidade">CIDADE</label>
+                                        <Field name='cidade' type='text' placeholder="Cidade" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="uf">UF</label>
+                                        <Field name='uf' type='text' placeholder="UF" />
+                                    </div>
                                 </div>
-                            </div>
-                            <button type='submit' disabled={isSubmitting}>Salvar</button>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
+                                <button className='btn' type='submit' disabled={isSubmitting}>Salvar</button>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>
             </div>
         </div >
     );

@@ -1,35 +1,4 @@
-.vehicles-container {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 20px;
-}
+@import url('./css/checkout.css') ;
 
-.vehicles-button {
-  margin: 10px;
-  padding: 10px;
-  background-color: #e0e0e0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.vehicles-button:hover {
-  background-color: #bdbdbd;
-}
-
-.vehicles-name {
-  font-weight: bold;
-}
-
-.vehicles-info {
-  margin-top: 5px;
-}
-
-.vehicles-title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #ffd700;
-  text-align: center;
-}
+@import url('./css/vehicles.css') ;
 
