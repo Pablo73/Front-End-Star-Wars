@@ -13,8 +13,8 @@ O projeto está implantado e disponível em:
 - [x] Exigir informações pessoais, informações de endereço e informações de pagamento no checkout.
 - [x] Utilizar a API ViaCEP para obter automaticamente os dados de endereço com base no CEP informado pelo cliente.
 - [x] Realizar validação nos formulários do checkout, incluindo e-mail e CPF/CNPJ.
-- [ ] Exibir uma tela de sucesso após a compra ou um toast de erro em caso de dados inválidos.
-- [ ] Todos os dados utilizados serão mockados.
+- [X] Exibir uma tela de sucesso após a compra ou um toast de erro em caso de dados inválidos.
+- [X] Todos os dados utilizados serão mockados.
 
 ## Tecnologias utilizadas
 
