@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import Checkout from '../pages/Checkout';
 
@@ -8,17 +8,17 @@ describe('Checkout Component', () => {
 
     render(<Checkout />)
 
-    expect(screen.getByText('NOME')).toBeInTheDocument();
-    expect(screen.getByText('EMAIL')).toBeInTheDocument();
+    expect(screen.getByTestId('name')).toBeInTheDocument();
+    expect(screen.getByTestId('email')).toBeInTheDocument();
     expect(screen.getByText('TELEFONE')).toBeInTheDocument();
-    expect(screen.getByText('CPF ou CNPJ')).toBeInTheDocument();
-    expect(screen.getByText('CEP')).toBeInTheDocument();
-    expect(screen.getByText('RUA')).toBeInTheDocument();
-    expect(screen.getByText('NÚMERO')).toBeInTheDocument();
-    expect(screen.getByText('COMPLEMENTO')).toBeInTheDocument();
-    expect(screen.getByText('BAIRRO')).toBeInTheDocument();
-    expect(screen.getByText('CIDADE')).toBeInTheDocument();
-    expect(screen.getByText('UF')).toBeInTheDocument();
+    expect(screen.getByTestId('cpfCnpj')).toBeInTheDocument();
+    expect(screen.getByTestId('cep')).toBeInTheDocument();
+    expect(screen.getByTestId('rua')).toBeInTheDocument();
+    expect(screen.getByTestId('numero')).toBeInTheDocument();
+    expect(screen.getByTestId('complemento')).toBeInTheDocument();
+    expect(screen.getByTestId('bairro')).toBeInTheDocument();
+    expect(screen.getByTestId('cidade')).toBeInTheDocument();
+    expect(screen.getByTestId('uf')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Salvar' })).toBeInTheDocument();
   });
 
@@ -27,9 +27,9 @@ describe('Checkout Component', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Salvar' }));
 
-    await waitFor(() => {
-      expect(screen.getByTestId('email')).toBeInTheDocument();
-    });
+    const valueError = screen.getByTestId('error')
+   
+    expect(valueError).toBeInTheDocument();
 
   });
 });

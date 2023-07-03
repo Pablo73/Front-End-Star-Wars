@@ -48,7 +48,7 @@ cd Front-End-Star-Wars
 3. Instale as dependências do projeto:
 
 ```ruby
-npm install ou npm install --force
+npm install
 ```
 
 4. Execute o projeto:
